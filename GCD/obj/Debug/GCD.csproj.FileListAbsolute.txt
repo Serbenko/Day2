@@ -5,6 +5,5 @@ C:\Users\Maryia_Serbenka@epam.com\Git\tasksc\Day2\GCD\obj\Debug\GCD.pdb
 C:\Users\Maryia_Serbenka@epam.com\Git\tasksc\Day2\GCD\obj\Debug\GCD.csprojResolveAssemblyReference.cache
 C:\Users\Maryia_Serbenka@epam.com\Git\Day2\GCD\bin\Debug\GCD.dll
 C:\Users\Maryia_Serbenka@epam.com\Git\Day2\GCD\bin\Debug\GCD.pdb
-C:\Users\Maryia_Serbenka@epam.com\Git\Day2\GCD\obj\Debug\GCD.csprojResolveAssemblyReference.cache
 C:\Users\Maryia_Serbenka@epam.com\Git\Day2\GCD\obj\Debug\GCD.dll
 C:\Users\Maryia_Serbenka@epam.com\Git\Day2\GCD\obj\Debug\GCD.pdb
