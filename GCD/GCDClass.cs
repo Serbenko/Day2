@@ -19,11 +19,13 @@ namespace GCD
 
         public static int GetGCDEuclideanAlgorithm(int a, int b, int c, Stopwatch watch)
         {
+            watch.Start();
             return GetGCDEuclideanAlgorithm(GetGCDEuclideanAlgorithm(a, b, watch), c, watch);
         }
 
         public static int GetGCDEuclideanAlgorithm(Stopwatch watch, params int[] array)
         {
+            watch.Start();
             int a = array[0];
             for (int i = 1; i < array.Length; i++)
             {
@@ -126,11 +128,13 @@ namespace GCD
 
         public static int GetGCDBinaryAlgorithm(int a, int b, int c, Stopwatch watch)
         {
+            watch.Start();
             return GetGCDBinaryAlgorithm(GetGCDBinaryAlgorithm(a, b, watch), c, watch);
         }
 
         public static int GetGCDBinaryAlgorithm(Stopwatch watch, params int[] array)
         {
+            watch.Start();
             int a = array[0];
             for (int i = 1; i < array.Length; i++)
             {
