@@ -24,3 +24,16 @@ C:\Users\Maryia_Serbenka@epam.com\Git\Day2\GCDAlgorithmTest\bin\Debug\nunit.fram
 C:\Users\Maryia_Serbenka@epam.com\Git\Day2\GCDAlgorithmTest\obj\Debug\GCDAlgorithmTest.csprojResolveAssemblyReference.cache
 C:\Users\Maryia_Serbenka@epam.com\Git\Day2\GCDAlgorithmTest\obj\Debug\GCDAlgorithmTest.dll
 C:\Users\Maryia_Serbenka@epam.com\Git\Day2\GCDAlgorithmTest\obj\Debug\GCDAlgorithmTest.pdb
+D:\study\Epam\C# training\Day2\GCDAlgorithmTest\bin\Debug\GCDAlgorithmTest.dll
+D:\study\Epam\C# training\Day2\GCDAlgorithmTest\bin\Debug\GCDAlgorithmTest.pdb
+D:\study\Epam\C# training\Day2\GCDAlgorithmTest\bin\Debug\GCD.dll
+D:\study\Epam\C# training\Day2\GCDAlgorithmTest\bin\Debug\nunit.core.dll
+D:\study\Epam\C# training\Day2\GCDAlgorithmTest\bin\Debug\nunit.core.interfaces.dll
+D:\study\Epam\C# training\Day2\GCDAlgorithmTest\bin\Debug\nunit.framework.dll
+D:\study\Epam\C# training\Day2\GCDAlgorithmTest\bin\Debug\nunit.util.dll
+D:\study\Epam\C# training\Day2\GCDAlgorithmTest\bin\Debug\NUnit.VisualStudio.TestAdapter.dll
+D:\study\Epam\C# training\Day2\GCDAlgorithmTest\bin\Debug\GCD.pdb
+D:\study\Epam\C# training\Day2\GCDAlgorithmTest\bin\Debug\nunit.framework.xml
+D:\study\Epam\C# training\Day2\GCDAlgorithmTest\obj\Debug\GCDAlgorithmTest.csprojResolveAssemblyReference.cache
+D:\study\Epam\C# training\Day2\GCDAlgorithmTest\obj\Debug\GCDAlgorithmTest.dll
+D:\study\Epam\C# training\Day2\GCDAlgorithmTest\obj\Debug\GCDAlgorithmTest.pdb

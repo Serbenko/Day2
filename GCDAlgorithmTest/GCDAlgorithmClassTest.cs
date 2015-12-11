@@ -10,26 +10,34 @@ namespace GCDAlgorithmTest
     public class GCDAlgorithmClassTest
     {
         #region EuclideanAlgorithmTests
+
         [Test]
         [TestCaseSource(typeof(DataClassAlgorithmTwoArgs), "PositiveData")]
         [TestCaseSource(typeof(DataClassAlgorithmTwoArgs), "SpecialCasesData")]
-        public int GetGCDEuclideanAlgorithmTest(int a, int b, Stopwatch watch)
+        public long GetGCDEuclideanAlgorithmTest(out long time, long a, long b)
         {
-            return GCDClass.GetGCDEuclideanAlgorithm(a, b, watch);
+            long gcd = GCDClass.GetGCDEuclideanAlgorithm(out time, a, b);
+            Debug.Write(time);
+            return gcd;
         }
 
         [Test]
         [TestCaseSource(typeof(DataClassAlgorithmThreeArgs), "PositiveData")]
-        public int GetGCDEuclideanAlgorithmTest(int a, int b, int c, Stopwatch watch)
+        [TestCaseSource(typeof(DataClassAlgorithmThreeArgs), "SpecialCasesData")]
+        public long GetGCDEuclideanAlgorithmTest(out long time, long a, long b, long c)
         {
-            return GCDClass.GetGCDEuclideanAlgorithm(a, b, c, watch);
+            long gcd = GCDClass.GetGCDEuclideanAlgorithm(out time, a, b,c);
+            Debug.Write(time);
+            return gcd;
         }
 
         [Test]
         [TestCaseSource(typeof(DataClassAlgorithm), "PositiveData")]
-        public int GetGCDEuclideanAlgorithmTest(Stopwatch watch, params int[] array)
+        public long GetGCDEuclideanAlgorithmTest(out long time, params long[] array)
         {
-            return GCDClass.GetGCDEuclideanAlgorithm(watch, array);
+            long gcd = GCDClass.GetGCDEuclideanAlgorithm(out time, array);
+            Debug.Write(time);
+            return gcd;
         }
         #endregion
 
@@ -37,24 +45,30 @@ namespace GCDAlgorithmTest
         [Test]
         [TestCaseSource(typeof(DataClassAlgorithmTwoArgs), "PositiveData")]
         [TestCaseSource(typeof(DataClassAlgorithmTwoArgs), "SpecialCasesData")]
-        public int GetGCDBinaryAlgorithmTest(int a, int b, Stopwatch watch)
+        public long GetGCDBinaryAlgorithmTest(out long time, long a, long b)
         {
-            return GCDClass.GetGCDBinaryAlgorithm(a, b, watch);
+            long gcd = GCDClass.GetGCDBinaryAlgorithm(out time, a, b);
+            Debug.WriteLine(time);
+            return gcd;
         }
 
         [Test]
         [TestCaseSource(typeof(DataClassAlgorithmThreeArgs), "PositiveData")]
         [TestCaseSource(typeof(DataClassAlgorithmThreeArgs), "SpecialCasesData")]
-        public int GetGCDBinaryAlgorithmTest(int a, int b, int c, Stopwatch watch)
+        public long GetGCDBinaryAlgorithmTest(out long time, long a, long b, long c)
         {
-            return GCDClass.GetGCDBinaryAlgorithm(a, b, c, watch);
+            long gcd = GCDClass.GetGCDBinaryAlgorithm(out time, a, b, c);
+            Debug.WriteLine(time);
+            return gcd;
         }
 
         [Test]
         [TestCaseSource(typeof(DataClassAlgorithm), "PositiveData")]
-        public int GetGCDBinaryAlgorithmTest(Stopwatch watch, params int[] array)
+        public long GetGCDBinaryAlgorithmTest(out long time, params long[] array)
         {
-            return GCDClass.GetGCDBinaryAlgorithm(watch, array);
+            long gcd = GCDClass.GetGCDBinaryAlgorithm(out time, array);
+            Debug.WriteLine(time);
+            return gcd;
         }
         #endregion
 
@@ -65,23 +79,23 @@ namespace GCDAlgorithmTest
             {
                 get
                 {
-                    yield return new TestCaseData(18, 9, new Stopwatch()).Returns(9);
-                    yield return new TestCaseData(-10, 470, new Stopwatch()).Returns(10);
-                    yield return new TestCaseData(45, -39, new Stopwatch()).Returns(3);
-                    yield return new TestCaseData(0, 15, new Stopwatch()).Returns(15);
-                    yield return new TestCaseData(197, 0, new Stopwatch()).Returns(197);
-                    yield return new TestCaseData(-185, 0, new Stopwatch()).Returns(185);
+                    yield return new TestCaseData(0L, 18L, 9L).Returns(9L);
+                    yield return new TestCaseData(0L, -10L, 470L).Returns(10L);
+                    yield return new TestCaseData(0L, 45L, -39L).Returns(3L);
+                    yield return new TestCaseData(0L, 0L, 15L).Returns(15L);
+                    yield return new TestCaseData(0L, 197L, 0L).Returns(197L);
+                    yield return new TestCaseData(0L, -185L, 0L).Returns(185L);
                 }
             }
             public static IEnumerable SpecialCasesData
             {
                 get
                 {
-                    yield return new TestCaseData(Int32.MinValue + 100, Int32.MinValue, new Stopwatch()).Returns(4);
-                    yield return new TestCaseData(Int32.MinValue, Int32.MinValue + 100, new Stopwatch()).Returns(4);
-                    yield return new TestCaseData(Int32.MinValue, Int32.MinValue, new Stopwatch()).Throws(typeof(OverflowException));
-                    yield return new TestCaseData(Int32.MinValue, 0, new Stopwatch()).Throws(typeof(OverflowException));
-                    yield return new TestCaseData(0, Int32.MinValue, new Stopwatch()).Throws(typeof(OverflowException));
+                    yield return new TestCaseData(0L, Int64.MinValue + 100, Int64.MinValue).Returns(4L);
+                    yield return new TestCaseData(0L, Int64.MinValue, Int64.MinValue + 100L).Returns(4L);
+                    yield return new TestCaseData(0L, Int64.MinValue, Int64.MinValue).Throws(typeof(OverflowException));
+                    yield return new TestCaseData(0L, Int64.MinValue, 0L).Throws(typeof(OverflowException));
+                    yield return new TestCaseData(0L, 0L, Int64.MinValue).Throws(typeof(OverflowException));
                 }
             }
         }
@@ -92,13 +106,13 @@ namespace GCDAlgorithmTest
             {
                 get
                 {
-                    yield return new TestCaseData(18, 81, 27, new Stopwatch()).Returns(9);
-                    yield return new TestCaseData(0, 0, 0, new Stopwatch()).Returns(0);
-                    yield return new TestCaseData(0, 0, 180, new Stopwatch()).Returns(180);
-                    yield return new TestCaseData(0, 125, 180, new Stopwatch()).Returns(5);
-                    yield return new TestCaseData(18, -9, 27, new Stopwatch()).Returns(9);
-                    yield return new TestCaseData(45, -39, -2820, new Stopwatch()).Returns(3);
-                    yield return new TestCaseData(-20, -80, -9000, new Stopwatch()).Returns(20);
+                    yield return new TestCaseData(0L, 18L, 81L, 27L).Returns(9L);
+                    yield return new TestCaseData(0L, 0L, 0L, 0L).Returns(0L);
+                    yield return new TestCaseData(0L, 0L, 0L, 180L).Returns(180L);
+                    yield return new TestCaseData(0L, 0L, 125L, 180L).Returns(5L);
+                    yield return new TestCaseData(0L, 18L, -9L, 27L).Returns(9L);
+                    yield return new TestCaseData(0L, 45L, -39L, -2820L).Returns(3L);
+                    yield return new TestCaseData(0L, -20L, -80L, -9000L).Returns(20L);
                 }
             }
 
@@ -106,10 +120,10 @@ namespace GCDAlgorithmTest
             {
                 get
                 {
-                    yield return new TestCaseData(Int32.MinValue + 100, Int32.MinValue, Int32.MinValue+200, new Stopwatch()).Returns(4);
-                    yield return new TestCaseData(Int32.MinValue + 200, Int32.MinValue, Int32.MinValue + 100, new Stopwatch()).Returns(4);
-                    yield return new TestCaseData(Int32.MinValue, Int32.MinValue, Int32.MinValue + 100, new Stopwatch()).Returns(4);
-                    yield return new TestCaseData(Int32.MinValue, Int32.MinValue + 100, Int32.MinValue,  new Stopwatch()).Returns(4);
+                    yield return new TestCaseData(0L, Int64.MinValue + 100, Int64.MinValue, Int64.MinValue+200).Returns(4L);
+                    yield return new TestCaseData(0L, Int64.MinValue + 200, Int64.MinValue, Int64.MinValue + 100).Returns(4L);
+                    yield return new TestCaseData(0L, Int64.MinValue, Int64.MinValue, Int64.MinValue + 100).Returns(4L);
+                    yield return new TestCaseData(0L, Int64.MinValue, Int64.MinValue + 100, Int64.MinValue).Returns(4L);
                 }
             }
         }
@@ -120,13 +134,13 @@ namespace GCDAlgorithmTest
             {
                 get
                 {
-                    yield return new TestCaseData(new Stopwatch(), new int[] { 15, 9, 18, 102, 126 }).Returns(3);
-                    yield return new TestCaseData(new Stopwatch(), new int[] { -100, -25, -150, -250, -150, -2500 }).Returns(25);
-                    yield return new TestCaseData(new Stopwatch(), new int[] { 100, 25, 150, 250, -100 }).Returns(25);
-                    yield return new TestCaseData(new Stopwatch(), new int[] { 100, -25, 0, -250, 0 }).Returns(25);
-                    yield return new TestCaseData(new Stopwatch(), new int[] { -15, 0, 0, -102, -126 }).Returns(3);
-                    yield return new TestCaseData(new Stopwatch(), new int[] { 0, 0, 0, 115 }).Returns(115);
-                    yield return new TestCaseData(new Stopwatch(), new int[] { 0, 0, 0, 0 }).Returns(0);
+                    yield return new TestCaseData(0L, new long[] { 15L, 9L, 18L, 102L, 126L }).Returns(3L);
+                    yield return new TestCaseData(0L, new long[] { -100L, -25L, -150L, -250L, -150L, -2500L }).Returns(25L);
+                    yield return new TestCaseData(0L, new long[] { 100L, 25L, 150L, 250L, -100L }).Returns(25L);
+                    yield return new TestCaseData(0L, new long[] { 100L, -25L, 0L, -250L, 0L }).Returns(25L);
+                    yield return new TestCaseData(0L, new long[] { -15L, 0L, 0L, -102L, -126L }).Returns(3L);
+                    yield return new TestCaseData(0L, new long[] { 0L, 0L, 0L, 115L }).Returns(115L);
+                    yield return new TestCaseData(0L, new long[] { 0L, 0L, 0L, 0L }).Returns(0L);
                 }
             }
         }

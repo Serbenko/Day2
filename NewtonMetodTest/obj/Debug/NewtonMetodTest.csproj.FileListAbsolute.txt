@@ -22,3 +22,14 @@ C:\Users\Maryia_Serbenka@epam.com\Git\Day2\NewtonMetodTest\bin\Debug\nunit.frame
 C:\Users\Maryia_Serbenka@epam.com\Git\Day2\NewtonMetodTest\obj\Debug\NewtonMetodTest.csprojResolveAssemblyReference.cache
 C:\Users\Maryia_Serbenka@epam.com\Git\Day2\NewtonMetodTest\obj\Debug\NewtonMetodTest.dll
 C:\Users\Maryia_Serbenka@epam.com\Git\Day2\NewtonMetodTest\obj\Debug\NewtonMetodTest.pdb
+D:\study\Epam\C# training\Day2\NewtonMetodTest\bin\Debug\NewtonMetodTest.dll
+D:\study\Epam\C# training\Day2\NewtonMetodTest\bin\Debug\NewtonMetodTest.pdb
+D:\study\Epam\C# training\Day2\NewtonMetodTest\bin\Debug\nunit.core.dll
+D:\study\Epam\C# training\Day2\NewtonMetodTest\bin\Debug\nunit.core.interfaces.dll
+D:\study\Epam\C# training\Day2\NewtonMetodTest\bin\Debug\nunit.framework.dll
+D:\study\Epam\C# training\Day2\NewtonMetodTest\bin\Debug\nunit.util.dll
+D:\study\Epam\C# training\Day2\NewtonMetodTest\bin\Debug\NUnit.VisualStudio.TestAdapter.dll
+D:\study\Epam\C# training\Day2\NewtonMetodTest\bin\Debug\nunit.framework.xml
+D:\study\Epam\C# training\Day2\NewtonMetodTest\obj\Debug\NewtonMetodTest.csprojResolveAssemblyReference.cache
+D:\study\Epam\C# training\Day2\NewtonMetodTest\obj\Debug\NewtonMetodTest.dll
+D:\study\Epam\C# training\Day2\NewtonMetodTest\obj\Debug\NewtonMetodTest.pdb
