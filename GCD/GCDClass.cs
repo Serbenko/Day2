@@ -5,50 +5,54 @@ namespace GCD
 {
     public static class GCDClass
     {
+        private delegate long GCDAlgorithm(long a, long b);
+
         #region EuclideanAlgorithm
-        private static long GetGCDEuclidean (long a, long b)
+
+
+        public static long GetGCDEuclideanAlgorithm(out long time, long a, long b)
+        {
+            return GetGCD(out time, a, b, GetGCDEuclidean);
+        }
+
+        public static long GetGCDEuclideanAlgorithm(out long time, long a, long b, long c)
+        {
+            return GetGCD(out time, a, b, c, GetGCDEuclidean);
+        }
+
+        public static long GetGCDEuclideanAlgorithm(out long time, params long[] array)
+        {
+            return GetGCD(out time, GetGCDEuclidean, array);
+        }
+        #endregion
+
+        #region BinaryAlgorithm
+
+        public static long GetGCDBinaryAlgorithm(out long time, long a, long b)
+        {
+            return GetGCD(out time, a, b, GetGCDBinary);
+        }
+
+        public static long GetGCDBinaryAlgorithm(out long time, long a, long b, long c)
+        {
+            return GetGCD(out time, a, b, c, GetGCDBinary);
+        }
+
+        public static long GetGCDBinaryAlgorithm(out long time, params long[] array)
+        {
+            return GetGCD(out time, GetGCDBinary, array);
+        }
+        #endregion
+
+        #region Private Methods
+
+        private static long GetGCDEuclidean(long a, long b)
         {
             while (b != 0)
                 b = a % (a = b);
             return Math.Abs(a);
         }
 
-        public static long GetGCDEuclideanAlgorithm(out long time, long a, long b)
-        {
-            Stopwatch watch = new Stopwatch();
-            watch.Start();
-            long gcd = GetGCDEuclidean(a, b);
-            watch.Stop();
-            time = watch.ElapsedTicks;
-            return gcd;
-        }
-
-        public static long GetGCDEuclideanAlgorithm(out long time, long a, long b, long c)
-        {
-            Stopwatch watch = new Stopwatch();
-            watch.Start();
-            long gcd = GetGCDEuclidean(GetGCDEuclidean(a, b), c);
-            watch.Stop();
-            time = watch.ElapsedTicks;
-            return gcd;
-        }
-
-        public static long GetGCDEuclideanAlgorithm(out long time, params long[] array)
-        {
-            Stopwatch watch = new Stopwatch();
-            watch.Start();
-            long a = array[0];
-            for (int i = 1; i < array.Length; i++)
-            {
-                a = GetGCDEuclidean(a, array[i]);
-            }
-            watch.Stop();
-            time = watch.ElapsedTicks;
-            return a;
-        }
-        #endregion
-
-        #region BinaryAlgorithm
         private static long GetGCDBinary(long a, long b)
         {
             if (a == 0)
@@ -79,39 +83,41 @@ namespace GCD
             return GetGCDBinary(b, Math.Abs(a - b));
         }
 
-        public static long GetGCDBinaryAlgorithm(out long time, long a, long b)
+
+        private static long GetGCD(out long time, long a, long b, GCDAlgorithm algorithm)
         {
             Stopwatch watch = new Stopwatch();
             watch.Start();
-            long gcd = GetGCDBinary(a, b);
+            long gcd = algorithm(a, b);
             watch.Stop();
             time = watch.ElapsedTicks;
             return gcd;
         }
 
-        public static long GetGCDBinaryAlgorithm(out long time, long a, long b, long c)
+        private static long GetGCD(out long time, long a, long b, long c, GCDAlgorithm algorithm)
         {
             Stopwatch watch = new Stopwatch();
             watch.Start();
-            long gcd = GetGCDBinary(GetGCDBinary(a, b), c);
+            long gcd = algorithm(algorithm(a, b), c);
             watch.Stop();
             time = watch.ElapsedTicks;
             return gcd;
         }
 
-        public static long GetGCDBinaryAlgorithm(out long time, params long[] array)
+        private static long GetGCD(out long time, GCDAlgorithm algorithm, params long[] array)
         {
             Stopwatch watch = new Stopwatch();
             watch.Start();
             long a = array[0];
             for (int i = 1; i < array.Length; i++)
             {
-                a = GetGCDBinary(a, array[i]);
+                a = algorithm(a, array[i]);
             }
             watch.Stop();
             time = watch.ElapsedTicks;
             return a;
         }
+
         #endregion
     }
 }
